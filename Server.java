@@ -6,9 +6,19 @@ class Server extends UnicastRemoteObject implements ServerInterface
 {
 	Server() throws RemoteException
 	{
+		super();
 	}
 
-	public void doComputation(ProgressNotifier pn) /* ... Add your solution here ... */
+	public void doComputation(ProgressNotifier pn) throws RemoteException {
+		for (int i = 0; i <= 100; i++) {
+			pn.notifyProgress(i);
+			try {
+				Thread.sleep(600);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 	public static void main(String[] argv)
 	{
