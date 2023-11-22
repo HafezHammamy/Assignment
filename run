@@ -1,0 +1,7 @@
+rmiregistry &
+sleep 1
+java Server &
+sleep 1
+java Client
+killall java
+killall rmiregistry
